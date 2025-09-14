@@ -1,15 +1,16 @@
 import { Movie } from '@/infrastructure/interfaces/movie.interface';
 import React, { useRef } from 'react';
-import { Text, View } from 'react-native';
+import { Text,  Dimensions, View } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 
 interface Props {
   movies: Movie[];
 }
-  
+
 const MainSlideShow = ({ movies }: Props) => {
 
   const ref = useRef(null);
+  const width = Dimensions.get('window').width;
 
   return (
     <View className="h-[250px] w-full">
@@ -17,8 +18,19 @@ const MainSlideShow = ({ movies }: Props) => {
         ref = { ref }
         data = { movies }
         renderItem = { ({ item }) => ( <Text>{ item.title }</Text> ) }
-        width = { 150 + 50 }
+        width = { 200 }
         height = { 350 }
+        style = {{
+            width: width,
+            height: 350,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        mode = 'parallax'
+        modeConfig = {{
+          parallaxScrollingScale: 0.9,
+          parallaxScrollingOffset: 50,
+        }}
       />
     </View>
   )
