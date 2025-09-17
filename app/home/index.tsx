@@ -1,4 +1,4 @@
-import MainSlideShow from '@/presentation/components/MainSlideShow';
+import MainSlideShow from '@/presentation/components/movies/MainSlideShow';
 import { useMovies } from '@/presentation/hooks/useMovies';
 import React from 'react';
 import { ActivityIndicator, Text, View } from 'react-native';
