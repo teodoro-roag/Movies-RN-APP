@@ -9,7 +9,14 @@ const HomeScreen = () => {
 
 
   const safeArea = useSafeAreaInsets();
-  const { nowPlayingQuery, popularQuery, topRatedQuery } = useMovies();
+
+  // Custom hook para obtener las películas
+  const { 
+    nowPlayingQuery, 
+    popularQuery, 
+    topRatedQuery, 
+    upComingQuery 
+  } = useMovies();
 
 
   if ( nowPlayingQuery.isLoading ) {
@@ -33,6 +40,9 @@ const HomeScreen = () => {
 
       {/* Peliculas mejor valoradas */}
       <MovieHorizontalList title="Mejor Valoradas" movies={topRatedQuery.data ?? []} />
+
+      {/* Peliculas Próximamente */}
+      <MovieHorizontalList title="Próximamente" movies={upComingQuery.data ?? []} />
     </View>
   )
 };
