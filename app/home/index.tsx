@@ -22,7 +22,7 @@ const HomeScreen = () => {
 
   return (
     <View className="mt-2" style={{ paddingTop: safeArea.top }}>
-      <Text className="text-3xl font-bold px-4 mb-2">Home Screen</Text>
+      <Text className="text-3xl font-bold px-4 mb-2">Movies App</Text>
 
       {/* Carrousel de imágenes */}
       <MainSlideShow movies={nowPlayingQuery.data ?? []} />
