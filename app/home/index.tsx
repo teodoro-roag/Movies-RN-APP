@@ -9,7 +9,7 @@ const HomeScreen = () => {
 
 
   const safeArea = useSafeAreaInsets();
-  const { nowPlayingQuery, popularQuery } = useMovies();
+  const { nowPlayingQuery, popularQuery, topRatedQuery } = useMovies();
 
 
   if ( nowPlayingQuery.isLoading ) {
@@ -30,6 +30,9 @@ const HomeScreen = () => {
 
       {/* Peliculas populares */}
       <MovieHorizontalList title="Populares" movies={popularQuery.data ?? []} />
+
+      {/* Peliculas mejor valoradas */}
+      <MovieHorizontalList title="Mejor Valoradas" movies={topRatedQuery.data ?? []} />
     </View>
   )
 };
