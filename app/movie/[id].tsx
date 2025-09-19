@@ -8,7 +8,7 @@ const movieScreen = () => {
 
   const { movieQuery } = useMovie(+id);
 
-  if (movieQuery.isLoading) {{
+  if (movieQuery.isLoading || !movieQuery.data) {{
     return (
       <View className="flex-1 justify-center items-center">
         <Text className="text-2xl mb-5">Cargando película...</Text>
