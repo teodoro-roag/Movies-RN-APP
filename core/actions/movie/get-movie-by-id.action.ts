@@ -7,7 +7,8 @@ export const getMovieByIdAction = async (id: number | string ) => {
   try{
   
       const { data } = await movieApi.get<MovieDBMovieResponse>(`/${ id }`);
-  
+    
+      console.log('Pelicula cargada', id)
       return MovieMapper.fromTheMovieDBToCompleteMovie(data);
   
     } catch(error) {
