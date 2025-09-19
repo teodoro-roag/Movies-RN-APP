@@ -1,5 +1,5 @@
 import { Movie } from '@/infrastructure/interfaces/movie.interface';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { FlatList, NativeScrollEvent, NativeSyntheticEvent, Text, View } from 'react-native';
 import MoviePoster from './MoviePoster';
 
@@ -12,10 +12,20 @@ interface Props {
   loadNextPage?: () => void;
 }
 
-const MovieHorizontalList = ( { title, movies, className, loadNextPage }: Props ) => {
-
+const MovieHorizontalList = ( { 
+  title, 
+  movies, 
+  className, 
+  loadNextPage 
+}: Props ) => {
 
   const isLoading = useRef( false );
+
+  useEffect( () => {
+    setTimeout( () => {
+      isLoading.current = false;
+    }, 200 );
+  }, [movies] );
 
   const onScroll = ( event: NativeSyntheticEvent<NativeScrollEvent> ) => {
     // Evalua si ya se está cargando y no ejecutar otra acción
@@ -33,6 +43,7 @@ const MovieHorizontalList = ( { title, movies, className, loadNextPage }: Props 
     // TODO Aquí iría la lógica para cargar más películas
     console.log( 'Cargar más películas' );
     loadNextPage?.(); // Llama a la función para cargar la siguiente página si está definida
+
     
   };
 
