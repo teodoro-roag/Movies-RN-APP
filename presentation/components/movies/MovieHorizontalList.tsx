@@ -56,7 +56,7 @@ const MovieHorizontalList = ( {
         horizontal
         data={ movies }
         showsHorizontalScrollIndicator={ false }
-        keyExtractor={ ( item ) => `${ item.id }` }
+        keyExtractor={ ( item, index ) => `${ item.id }-${ index }` }
         renderItem={ ( { item } ) => <MoviePoster id={ item.id } poster={ item.poster } smallPoster /> }
         onScroll={ onScroll }
       />
