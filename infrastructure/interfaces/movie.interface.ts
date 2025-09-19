@@ -10,3 +10,11 @@ export interface Movie {
   poster: string;
   backdrop: string;
 }
+
+export interface CompleteMovie extends Movie {
+  genres: string[];
+  duration: number; // in minutes
+  budget: number; // in USD
+  originalTitle: string;
+  productionCompanies: string[];
+}
