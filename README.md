@@ -1,50 +1,75 @@
-# Welcome to your Expo app 👋
+# 📱 Movies App  
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+> Aplicación móvil construida con [Expo](https://expo.dev) que permite a los usuarios consultar peliculas de la API [themoviedb](https://developer.themoviedb.org/)
 
-## Get started
-
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+---
+## 🚀 Tecnologías usadas
+- [React Native](https://reactnative.dev/)  
+- [Expo](https://docs.expo.dev/)  
+- [TypeScript](https://www.typescriptlang.org/)  
+- [Nativewind](https://www.nativewind.dev/) 
+- [Expo LinearGradient](https://docs.expo.dev/versions/latest/sdk/linear-gradient/) 
+- [TanStack Query v5](https://tanstack.com/query/latest/docs/framework/react/overview)
+- [Axios](https://www.npmjs.com/package/axios)
+- [React Native Reanimated Carousel](https://rn-carousel.dev/)
+---
+## 📂 Estructura del proyecto  
 ```bash
-npm run reset-project
+├── assets/           # Imágenes, íconos, fuentes
+├── presentation/     # Componentes reutilizables y Hooks
+├── core/             # Acciones y API
+├── config/           # Funciones auxiliares
+├── app/              # Incluye todas las ventanas de la app
+├── infrastructure/   # Interfaces y Mappers
+└── package.json
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## ⚙️ Instalación y ejecución  
 
-## Learn more
+1. Clona este repositorio
+```bash
+git clone https://github.com/teodoro-roag/Movies-RN-APP.git
+cd Movies-RN-APP
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+2. Instala dependencias
+```bash
+npm install
+```
+3. Inicia el proyecto
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npm run start
+```
+4. Escanea el QR con la app de [Expo Go](https://expo.dev/go) para probarlo en tu dispositivo.
 
-## Join the community
 
-Join our community of developers creating universal apps.
+## 🧩 Scripts disponibles  
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- `npm run start` → Inicia el proyecto con Expo  
+- `npm run android` → Corre en emulador/dispositivo Android  
+- `npm run ios` → Corre en emulador iOS (solo en macOS)  
+- `npm run web` → Corre en navegador  
+
+## 📸 Capturas de pantalla  
+
+| Inicio | Detalles | Más detalles |
+|--------|--------|---------------|
+| ![](./assets/screenshots/home-movies-app.jpg) | ![](./assets/screenshots/detail-1-movies-app.jpg) | ![](./assets/screenshots/more-detail-movies-app.jpg) |
+
+## 🛠️ Contribución  
+
+1. Haz un fork del proyecto  
+2. Crea una rama para tu feature  
+```bash
+git checkout -b feature/nueva-feature
+```
+3. Haz commit de tus cambios
+```bash
+git commit -m 'Agrega nueva feature'
+```
+4. Haz push a la rama
+```bash
+git push origin feature/nueva-feature
+```
+5. Abre un Pull Request
