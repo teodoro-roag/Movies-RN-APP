@@ -1,4 +1,6 @@
-import { Image, Text, useWindowDimensions, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { router } from 'expo-router';
+import { Image, Pressable, Text, useWindowDimensions, View } from 'react-native';
 
 interface Props {
   poster: string;
@@ -13,6 +15,24 @@ const MovieHeader = ( { poster, originalTitle, title }: Props) => {
 
   return (
     <>
+      <View style = {{
+        position: 'absolute',
+        zIndex: 99,
+        elevation: 9,
+        top: 35,
+        left: 10
+      }}>
+        <Pressable
+          onPress={() => router.dismiss() }
+        >
+          <Ionicons 
+            name="arrow-back" 
+            size={30} 
+            color="white" 
+            className="shadow"
+            />
+          </Pressable>
+      </View>
       <View
         style = {{ height: screenHeight * 0.7 }}
         className="shadow-xl shadow-black/20">
