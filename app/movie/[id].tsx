@@ -3,12 +3,13 @@ import MovieHeader from '@/presentation/components/movies/movie/MovieHeader';
 import { useMovie } from '@/presentation/hooks/useMovie';
 import { useLocalSearchParams } from 'expo-router';
 import { ActivityIndicator, ScrollView, Text, View } from 'react-native';
+import { MovieCast } from '@/presentation/components/movies/movie/MovieCast';
 
 const movieScreen = () => {
 
   const { id } = useLocalSearchParams();
 
-  const { movieQuery } = useMovie(+id);
+  const { movieQuery, castQuery } = useMovie(+id);
 
   if (movieQuery.isLoading || !movieQuery.data) {{
     return (
@@ -30,6 +31,9 @@ const movieScreen = () => {
         />
       <MovieDescription
         movie={movieQuery.data}
+      />
+      <MovieCast
+        cast={castQuery.data ?? []}
       />
     </ScrollView>
   )
