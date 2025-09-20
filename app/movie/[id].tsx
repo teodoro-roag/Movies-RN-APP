@@ -1,3 +1,4 @@
+import MovieHeader from '@/presentation/components/movies/movie/MovieHeader';
 import { useMovie } from '@/presentation/hooks/useMovie';
 import { useLocalSearchParams } from 'expo-router';
 import { ActivityIndicator, ScrollView, Text, View } from 'react-native';
@@ -21,9 +22,11 @@ const movieScreen = () => {
 
   return (
     <ScrollView>
-      <Text>
-        { movieQuery.data?.title ?? 'No tiene título' }
-      </Text>
+      <MovieHeader 
+        originalTitle={movieQuery.data.originalTitle}
+        poster={movieQuery.data.poster}
+        title={movieQuery.data.title}
+        />
     </ScrollView>
   )
 
